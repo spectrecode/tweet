@@ -1,0 +1,36 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url(../img/patio.jpg);
+	background-size: cover;
+}
+form {
+	text-align: center;
+    margin-top: 10%;
+}
+textarea {
+	width: 40%;
+    padding: 5px 15px;
+    height: 10em;
+    background-color: rgba(84, 58, 99, 0.86);
+    border-radius: 10px;
+    color: #fbf2a7;
+    font-size: 15px;
+}
+button {
+	padding: 5px;
+	width: 20%;
+    height: 30px;
+    border-radius: 10%;
+    background-color: #74725c;
+    color: #fde9a0;
+    font-size: 17px;
+    border-color: #c7c975;
+}
+.caja {
+	color: #fbf2a7;
+    text-align: center;
+}
