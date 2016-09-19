@@ -9,7 +9,6 @@ body {
 }
 form {
 	text-align: center;
-    margin-top: 10%;
 }
 textarea {
 	width: 40%;
@@ -30,7 +29,15 @@ button {
     font-size: 17px;
     border-color: #c7c975;
 }
+h2 {
+    color: rgba(255, 239, 170, 1);
+    margin: 4% 0% 4% 30%
+}
 .caja {
 	color: #fbf2a7;
-    text-align: center;
+    width: 40%;
+    padding: 10px 15px;
+    background-color: rgba(39, 32, 18, 0.84);
+    margin: auto;
+    border-radius: 5px;
 }
