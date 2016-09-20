@@ -1,13 +1,17 @@
 window.addEventListener("load", function() {
 	var boton = document.getElementById("boton");
-	boton.disabled = true;
+	var texto = document.getElementById("txt");
+	var textArea = document.getElementById("txt");
+	var contador = document.getElementById("contador");
+	var caracteres = contador.innerHTML = 140;
+
 	boton.addEventListener("click", function(e) {
 		e.preventDefault();
-
-		var texto = document.getElementById("txt");
 		var cajaTexto = texto.value;
 		agregarMensaje(cajaTexto);
-		texto.value = "";	
+		texto.value = "";
+		contador.innerHTML = 140;
+		boton.disabled = true;
 	});
 	function agregarMensaje(texto) {
 		var publicar = document.createElement("div");
@@ -16,8 +20,13 @@ window.addEventListener("load", function() {
 	 	contenedor.insertBefore(publicar,contenedor.childNodes[0]).classList.add("caja");
 	}
 	
-	var textArea = document.getElementById("txt");
 	textArea.addEventListener("keydown", function() {
 		boton.disabled = false;
+		var longitud = textArea.value.length;
+		if (longitud <= caracteres) {
+			contador.innerHTML = caracteres - longitud;
+		} else {
+			contador.innerHTML = caracteres - longitud;
+		};
 	}) 
 });
