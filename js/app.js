@@ -12,6 +12,7 @@ window.addEventListener("load", function() {
 			texto.value = "";
 			contador.innerHTML = 140;
 			boton.disabled = true;
+			resize();
 		});
 
 	function agregarMensaje(texto) {
@@ -29,6 +30,29 @@ window.addEventListener("load", function() {
 			cambioColor(longitud);
 		});
 
+	/*	textArea.addEventListener("keyup", function(e) {
+			if (e.keyCode == 13) {
+				var row = parseInt(this.getAttribute("rows"));
+				this.setAttribute("rows", row + 1);
+			}
+		}) */
+		var area = document.querySelector("textArea");
+		area.addEventListener('keydown', autosize);
+             
+	function autosize(){
+  		var text = this;
+  		setTimeout(function(){
+    		text.style.cssText = 'height:auto; padding:';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    		text.style.cssText = 'height:' + text.scrollHeight + 'px';
+  		},0);
+	}
+	
+	function resize() {
+       textArea.style.cssText = "height: auto";
+   	}
+
 	function contar(longitud) {
 		if (longitud <= caracteres) {
 			contador.innerHTML = caracteres - longitud;
@@ -37,7 +61,7 @@ window.addEventListener("load", function() {
 			boton.disabled = true;
 		}
 		if (longitud == 0) {
-			boton.disabled = true;						
+			boton.disabled = true;
 		}
 	}
 
