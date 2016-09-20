@@ -13,7 +13,23 @@ window.addEventListener("load", function() {
 			contador.innerHTML = 140;
 			boton.disabled = true;
 			resize();
+			agregarHora();
 		});
+
+	function agregarHora(){
+		var fecha = new Date();
+		var hora = fecha.getHours();
+		var minuto = fecha.getMinutes();
+			if (minuto < 10) {
+				minuto = "0" + minuto;
+			}
+		var horaImprimible = hora + " : " + minuto;
+		
+		var horario = document.createElement("div");
+       	horario.innerText = horaImprimible;
+       	var contenedor = document.getElementById("contenedor");
+       	contenedor.insertBefore(horario, contenedor.childNodes[0]).classList.add("horaBox");
+	}
 
 	function agregarMensaje(texto) {
 		var publicar = document.createElement("div");
@@ -77,5 +93,6 @@ window.addEventListener("load", function() {
 		} else {
 			contador.classList.remove("colorDos")
 		}
-	} 
+	}
+
 });
